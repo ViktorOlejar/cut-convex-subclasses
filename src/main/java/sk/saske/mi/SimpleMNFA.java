@@ -28,7 +28,7 @@ import java.util.HashSet;
  * to which state x goes on symbol y. Final states are indicated by a finality
  * array and initial states by an initiality array. There is an auxiliary
  * variable indicating whether the given MNFA is complete. In this specific
- * implementation no epsilon moves are allowed.
+ * implementation, no epsilon moves are allowed.
  *
  */
 
@@ -116,9 +116,8 @@ public class SimpleMNFA {
 		this.complete = complete;
 	}
 
-	/*
+	/**
 	 * Setters and getters.
-	 * 
 	 */
 
 	public int getNumberOfStates() {
