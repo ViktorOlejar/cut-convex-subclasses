@@ -62,25 +62,6 @@ public class SimpleAutomatonStatePartition {
 		return partition.get(index);
 	}
 	
-	public void addNewClass(int state, int[] characteristicTransitions) {
-		SimpleAutomatonEquivalenceClass newClass = new SimpleAutomatonEquivalenceClass(state, characteristicTransitions.length, characteristicTransitions);;
-		partition.add(newClass);
-	}
-	
-	public void addNewClass(int alphabetSize) {
-		SimpleAutomatonEquivalenceClass newClass = new SimpleAutomatonEquivalenceClass(alphabetSize);
-		partition.add(newClass);
-	}
-	
-	public void addNewClass(int alphabetSize, int state, boolean finality) {
-		SimpleAutomatonEquivalenceClass newClass = new SimpleAutomatonEquivalenceClass(alphabetSize, state, finality);
-		partition.add(newClass);
-	}
-	
-	public void addNewClass(int state, int alphabetSize, int[] characteristicTransitions, boolean finality) {
-		SimpleAutomatonEquivalenceClass newClass = new SimpleAutomatonEquivalenceClass(state, alphabetSize, characteristicTransitions, finality);
-		partition.add(newClass);
-	}
 	
 	public void addNewClass(int alphabetSize, boolean finality) {
 		SimpleAutomatonEquivalenceClass newClass = new SimpleAutomatonEquivalenceClass(alphabetSize, finality);

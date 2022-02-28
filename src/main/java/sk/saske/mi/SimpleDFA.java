@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 /**
  * 
- * A class representing a deterministic finite automaton. States are indexed by
+ * A class representing a deterministic finite automaton (DFA). States are indexed by
  * natural numbers. Transitions are modeled by a matrix, where targetState =
  * transitionMatrix[sourceState][alphabetSymbol]. Final states are indicated by
  * a finality array.

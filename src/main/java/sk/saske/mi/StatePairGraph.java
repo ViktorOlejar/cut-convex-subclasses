@@ -18,8 +18,6 @@ package sk.saske.mi;
 
 import java.util.Stack;
 
-
-
 public class StatePairGraph {
 
 	private SimpleDFA dfa;
@@ -37,19 +35,11 @@ public class StatePairGraph {
 		this.dfa = dfa;
 		this.graphOfDFA = new AdjMatrixGraph(dfa.getNumberOfStates() * dfa.getNumberOfStates());
 
-		for (int lftStateI = 0; lftStateI < dfa.getNumberOfStates(); lftStateI++) {
-			for (int rgtStateJ = 0; rgtStateJ < dfa.getNumberOfStates(); rgtStateJ++) {
-
-				for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
-
+		for (int lftStateI = 0; lftStateI < dfa.getNumberOfStates(); lftStateI++)
+			for (int rgtStateJ = 0; rgtStateJ < dfa.getNumberOfStates(); rgtStateJ++)
+				for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++)
 					graphOfDFA.setDirectedEdgeValue(graphOfDfaIndex(lftStateI, rgtStateJ), graphOfDfaIndex(
 							dfa.applySingleInput(lftStateI, symbol), dfa.applySingleInput(rgtStateJ, symbol)), 1);
-
-				}
-
-			}
-		}
-
 	}
 
 	public boolean dfsPairsReachable(int lftInitial, int rgtInitial, int lftTarget, int rgtTarget) {
@@ -68,11 +58,10 @@ public class StatePairGraph {
 			if (current == targetIndex)
 				return true;
 
-			for (int dest : graphOfDFA.getNeighbours(current)) {
-
+			for (int dest : graphOfDFA.getNeighbours(current))
 				if (!isVisited[dest])
 					stack.push(dest);
-			}
+
 		}
 
 		return false;

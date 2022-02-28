@@ -175,7 +175,12 @@ public class SimpleDFAOperator {
 		return (numOfStates * state1Index) + state2Index;
 	}
 
-	
+	/**
+	 * Subset construction for converting an input SimpleMNFA to SimpleDFA.
+	 * 
+	 * @param mnfa
+	 * @return SimpleDFA
+	 */
 	public SimpleDFA determinize(SimpleMNFA mnfa) {
 		int numOfStates;
 		int alphabetSize = mnfa.getAlphabetSize();
@@ -250,6 +255,12 @@ public class SimpleDFAOperator {
 		return new SimpleDFA(numOfStates, alphabetSize, transitionMatrix, finalityArray);
 	}
 
+	/**
+	 * Completes the transition function of a SimpleMNFA.
+	 * 
+	 * @param mnfa
+	 * @return SimpleMNFA
+	 */
 	public SimpleMNFA makeComplete(SimpleMNFA mnfa) {
 		int numberOfStates = mnfa.getNumberOfStates() + 1;
 		int alphabetSize = mnfa.getAlphabetSize();
@@ -285,6 +296,12 @@ public class SimpleDFAOperator {
 		return new SimpleMNFA(numberOfStates, alphabetSize, transitionMatrix, initialityArray, finalityArray, complete);
 	}
 
+	/**
+	 * Perform Hopcroft minimization on input SimpleDFA.
+	 * 
+	 * @param automaton
+	 * @return SimpleDFA which is minimal
+	 */
 	public SimpleDFA minimize(SimpleDFA automaton) {
 		automaton = removeUnreachableStates(automaton);
 
@@ -370,8 +387,13 @@ public class SimpleDFAOperator {
 		return createAutomatonFromPartition(partitionIterations.get(partitionIterations.size() - 1));
 	}
 
+	/**
+	 * Support method for removing unreachable states from input SimpleDFA.
+	 * 
+	 * @param automaton
+	 * @return SimpleDFA with no unreachable states
+	 */
 	private SimpleDFA removeUnreachableStates(SimpleDFA automaton) {
-
 		boolean[] reachableStates = new boolean[automaton.getNumberOfStates()];
 
 		LinkedList<Integer> queue = new LinkedList<Integer>();
@@ -434,6 +456,14 @@ public class SimpleDFAOperator {
 		return new SimpleDFA(numberOfStates, alphabetSize, transitionMatrix, finalityArray);
 	}
 
+	/**
+	 * Support method for retrieving every state reachable on a single alphabet
+	 * symbol from a given state in a given SimpleDFA.
+	 * 
+	 * @param automaton
+	 * @param state
+	 * @return stack of one symbol reachable states
+	 */
 	public Stack<Integer> getSubsequentNeighbourStates(SimpleDFA automaton, int state) {
 		Stack<Integer> result = new Stack<>();
 		for (int symbol = 0; symbol < automaton.getAlphabetSize(); symbol++) {
@@ -443,6 +473,15 @@ public class SimpleDFAOperator {
 		return result;
 	}
 
+	/**
+	 * Support method for DFA minimization indicating partition refinement halt. The
+	 * inputs represent two partitions in subsequent iterations of the Hopcroft
+	 * minimization algorithm.
+	 * 
+	 * @param p
+	 * @param k
+	 * @return boolean
+	 */
 	private boolean stopMinimization(SimpleAutomatonStatePartition p, SimpleAutomatonStatePartition k) {
 		PartitionComparator pComp = new PartitionComparator();
 		if (pComp.compare(p, k) == 0)
@@ -451,6 +490,13 @@ public class SimpleDFAOperator {
 		return false;
 	}
 
+	/**
+	 * Support method for creating a SimpleDFA from the final state partition of the
+	 * Hopcroft minimization algorithm.
+	 * 
+	 * @param partition
+	 * @return SimpleDFA
+	 */
 	private SimpleDFA createAutomatonFromPartition(SimpleAutomatonStatePartition partition) {
 		int numOfStates;
 		int alphabetSize;
@@ -483,6 +529,12 @@ public class SimpleDFAOperator {
 		return automaton;
 	}
 
+	/**
+	 * Support method for changing the initial state of an input SimpleDFA.
+	 * 
+	 * @param newInit
+	 * @param automaton
+	 */
 	private void changeInitialState(int newInit, SimpleDFA automaton) {
 
 		boolean newInitFinality = automaton.getFinalityArray()[newInit];
@@ -509,14 +561,20 @@ public class SimpleDFAOperator {
 					swap = true;
 				}
 
-				if (!swap && target == newInit) {
+				if (!swap && target == newInit)
 					automaton.getTransitionMatrix()[state][symbol] = 0;
-				}
+
 			}
 		}
 
 	}
 
+	/**
+	 * Returns every possible state renumbering of a given input SimpleDFA
+	 * 
+	 * @param automaton
+	 * @return an array of renumbered automata
+	 */
 	public SimpleDFA[] getAutomatonStatePermutations(SimpleDFA automaton) {
 
 		int[] permBaseElements = new int[automaton.getNumberOfStates() - 1];
@@ -525,15 +583,23 @@ public class SimpleDFAOperator {
 		}
 		returnAllRecursive(permBaseElements.length, permBaseElements, automaton.copy());
 
-		SimpleDFA[] result = new SimpleDFA[automatonStatePermutations.size()];
+		SimpleDFA[] permutedDFAStates = new SimpleDFA[automatonStatePermutations.size()];
 
-		result = automatonStatePermutations.toArray(result);
+		permutedDFAStates = automatonStatePermutations.toArray(permutedDFAStates);
 
 		automatonStatePermutations.clear();
 		stateNumberPermutation.clear();
-		return result;
+		return permutedDFAStates;
 	}
 
+	/**
+	 * Support method for recursively enumerating every possible automaton state
+	 * renumbering.
+	 * 
+	 * @param n        - permutation length
+	 * @param elements - elements to permute
+	 * @param dfa      - automaton to perform renumbering on
+	 */
 	private void returnAllRecursive(int n, int[] elements, SimpleDFA dfa) {
 
 		if (n == 1) {
@@ -554,6 +620,15 @@ public class SimpleDFAOperator {
 		}
 	}
 
+	/**
+	 * Support method for performing the renumbering when two state indexes are
+	 * swapped.
+	 * 
+	 * @param input - elements to permute
+	 * @param a     - state index for swapping
+	 * @param b     - state index for swapping
+	 * @param dfa   - automaton to perform renumbering on
+	 */
 	private void swap(int[] input, int a, int b, SimpleDFA dfa) {
 		renumberThisAutomaton(dfa, input[a], input[b]);
 
@@ -563,6 +638,13 @@ public class SimpleDFAOperator {
 
 	}
 
+	/**
+	 * Support method for directly exchanging state number indexes.
+	 * 
+	 * @param dfa
+	 * @param stateA
+	 * @param stateB
+	 */
 	private void renumberThisAutomaton(SimpleDFA dfa, int stateA, int stateB) {
 		HashMap<Integer, Integer> stateMap = new HashMap<>();
 		stateMap.put(stateA, stateB);
@@ -590,6 +672,13 @@ public class SimpleDFAOperator {
 
 	}
 
+	/**
+	 * Returns a DFA with newly mapped transition symbols based on input mapping.
+	 * 
+	 * @param dfa
+	 * @param alphabetMapping
+	 * @return SimpleDFA
+	 */
 	public SimpleDFA homomorphicImage(SimpleDFA dfa, int[] alphabetMapping) {
 		if (alphabetMapping.length != dfa.getAlphabetSize()) {
 			System.err.println("Inconsistent mapping with alphabet size.");

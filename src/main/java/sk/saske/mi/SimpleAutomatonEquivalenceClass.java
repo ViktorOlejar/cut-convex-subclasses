@@ -25,12 +25,7 @@ public class SimpleAutomatonEquivalenceClass {
 	private int[] classTransition;
 	private boolean isFinal;
 
-	public SimpleAutomatonEquivalenceClass(int alphabetSize) {
-		this.alphabetSize = alphabetSize;
 
-		this.statesInClass = new HashSet<>();
-		this.classTransition = new int[alphabetSize];
-	}
 	
 	public SimpleAutomatonEquivalenceClass(int alphabetSize, boolean finality) {
 		this.alphabetSize = alphabetSize;
@@ -39,55 +34,6 @@ public class SimpleAutomatonEquivalenceClass {
 		this.classTransition = new int[alphabetSize];
 		this.isFinal = finality;
 	}
-	
-	public SimpleAutomatonEquivalenceClass(int alphabetSize, int state, boolean finality) {
-		this.alphabetSize = alphabetSize;
-
-		this.statesInClass = new HashSet<>();
-		this.statesInClass.add(state);
-		this.isFinal = true;
-		this.classTransition = new int[alphabetSize];
-		
-	}
-
-	public SimpleAutomatonEquivalenceClass(int alphabetSize, int[] characteristicTransitions) {
-		this.alphabetSize = alphabetSize;
-
-		this.statesInClass = new HashSet<>();
-		this.classTransition = new int[alphabetSize];
-		if (alphabetSize != characteristicTransitions.length)
-			throw new RuntimeException("Wrong transitions in equavalence class.");
-		for (int i = 0; i < characteristicTransitions.length; i++) {
-			classTransition[i] = characteristicTransitions[i];
-		}
-	}
-	public SimpleAutomatonEquivalenceClass(int state, int alphabetSize, int[] characteristicTransitions) {
-		this.alphabetSize = alphabetSize;
-
-		this.statesInClass = new HashSet<>();
-		this.statesInClass.add(state);
-		this.classTransition = new int[alphabetSize];
-		if (alphabetSize != characteristicTransitions.length)
-			throw new RuntimeException("Wrong transitions in equavalence class.");
-		for (int i = 0; i < characteristicTransitions.length; i++) {
-			this.classTransition[i] = characteristicTransitions[i];
-		}
-	}
-	
-	public SimpleAutomatonEquivalenceClass(int state, int alphabetSize, int[] characteristicTransitions, boolean finality) {
-		this.alphabetSize = alphabetSize;
-
-		this.statesInClass = new HashSet<>();
-		this.statesInClass.add(state);
-		this.isFinal = finality;
-		this.classTransition = new int[alphabetSize];
-		if (alphabetSize != characteristicTransitions.length)
-			throw new RuntimeException("Wrong transitions in equavalence class.");
-		for (int i = 0; i < characteristicTransitions.length; i++) {
-			this.classTransition[i] = characteristicTransitions[i];
-		}
-	}
-
 
 	public void addState(int state) {
 		statesInClass.add(state);
