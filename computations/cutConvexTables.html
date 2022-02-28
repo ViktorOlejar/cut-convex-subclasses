@@ -1,0 +1,2792 @@
+<html>
+<body>
+
+Meaning of colors:<br>
+Yellow = general complexity deviates from the formula.<br>
+Red = hardest witnesses from binary one-column lists do not reach general complexity.
+<br>"hm" = homomorphism<br>
+"With hm" is bold iff "Without hm" does not reach general complexity for (5,5).
+
+<h2>K left ideal</h1>
+
+<TABLE>
+<TR>
+<TD>
+<b>K left ideal, L right ideal:<br> mn-n+m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">2</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">5</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">8</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">11</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L left ideal:<br> mn-n+m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">2</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td><td bgcolor="#EECCCC">17</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">11</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L two-sided ideal:<br> mn-n+m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">2</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td><td bgcolor="#EECCCC">17</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td><td bgcolor="#EECCCC">23</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L all-sided ideal:<br> mn-n+m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">2</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td><td bgcolor="#EECCCC">17</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td><td bgcolor="#EECCCC">23</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<b>K left ideal, L prefix-free:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">20</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L suffix-free:<br> mn-n-m+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>1</td><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>1</td><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L factor-free:<br> mn-n-m+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>1</td><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>1</td><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L subword-free:<br> mn-n-m+2 with alphabet size m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>1</td><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>1</td><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+</TR>
+
+<TR>
+<TD>
+<b>K left ideal, L prefix-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L suffix-closed:<br> mn-n+m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">2</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>7</td><td>9</td><td>11</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>10</td><td>13</td><td>16</td><td>19</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>13</td><td>17</td><td>21</td><td>25</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">18</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">20</td><td bgcolor="#EECCCC">24</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td><td bgcolor="#EECCCC">16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td><td bgcolor="#EECCCC">22</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L factor-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K left ideal, L subword-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+</TABLE>
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+<h2>K suffix-free</h1>
+
+<TABLE>
+<TR>
+<TD>
+<b>K suffix-free, L right ideal:<br> mn-2n+m with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>8</td><td>10</td><td>12</td><td>14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L left ideal:<br> mn-2n+m with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>8</td><td>10</td><td>12</td><td>14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L two-sided ideal:<br> mn-2n+m with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>8</td><td>10</td><td>12</td><td>14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L all-sided ideal:<br> mn-2n+m with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>8</td><td>10</td><td>12</td><td>14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<b>K suffix-free, L prefix-free:<br> mn-2n+2 with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>6</td><td>8</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">7</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">10</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">5</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L suffix-free:<br> mn-2n-m+4 with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>8</td><td>11</td><td>14</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>8</td><td>11</td><td>14</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>8</td><td>11</td><td>14</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L factor-free:<br> mn-2n-m+4 with ternary witnesses</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>8</td><td>11</td><td>14</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L subword-free:<br> mn-2n-m+4 with alphabet size m-1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>8</td><td>11</td><td>14</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<b>K suffix-free, L prefix-closed:<br> mn-2n+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>6</td><td>8</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>6</td><td bgcolor="#EECCCC">7</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L suffix-closed:<br> mn-2n+m</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">3</td><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">4</td><td>8</td><td>10</td><td>12</td><td>14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">5</td><td>11</td><td>14</td><td>17</td><td>20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>6</td><td>7</td><td>8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L factor-closed:<br> mn-2n+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>6</td><td>8</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>6</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-free, L subword-closed:<br> mn-2n+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td><td bgcolor="#FFFFDD">1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td bgcolor="#FFFFDD">3</td><td bgcolor="#FFFFDD">4</td><td bgcolor="#FFFFDD">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>6</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>6</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>8</td><td>11</td><td>14</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+</TABLE>
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+<h2>K suffix-closed</h1>
+
+<TABLE>
+<TR>
+<TD>
+<b>K suffix-closed, L right ideal:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L left ideal:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L two-sided ideal:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L all-sided ideal:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td><td bgcolor="#EECCCC">17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<b>K suffix-closed, L prefix-free:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">20</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">15</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">12</td><td bgcolor="#EECCCC">16</td><td bgcolor="#EECCCC">20</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L suffix-free:<br> mn-n-m+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">9</td><td bgcolor="#EECCCC">12</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">16</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L factor-free:<br> mn-n-m+2</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L subword-free:<br> mn-n-m+2 with alphabet size 2m-3</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>5</td><td>7</td><td>9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#FFFFDD">1</td><td>4</td><td>7</td><td>10</td><td>13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#FFFFDD">1</td><td>5</td><td>9</td><td>13</td><td>17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<b>K suffix-closed, L prefix-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">With hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L suffix-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L factor-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">15</td><td bgcolor="#EECCCC">19</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+<TD>
+<b>K suffix-closed, L subword-closed:<br> mn-n+1</b>
+<table>
+  <tr>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="6">General&nbsp;complexity</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">1</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">1</th><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#FFFFDD">1</td><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>5</td><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5">Without hm</td>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td bgcolor="#EECCCC">2</td><td bgcolor="#EECCCC">3</td><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td bgcolor="#EECCCC">4</td><td bgcolor="#EECCCC">5</td><td bgcolor="#EECCCC">7</td><td bgcolor="#EECCCC">9</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td bgcolor="#EECCCC">6</td><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">10</td><td bgcolor="#EECCCC">13</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td bgcolor="#EECCCC">8</td><td bgcolor="#EECCCC">11</td><td bgcolor="#EECCCC">14</td><td bgcolor="#EECCCC">17</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table cellspacing="0" border="1">
+        <tr>
+          <td colspan="5"><b>With hm</b></th>
+        </tr>
+        <tr align="right">
+          <th align="left">K\L</th><th width="15">2</th><th width="15">3</th><th width="15">4</th><th width="15">5</th>
+        </tr>
+        <tr align="right">
+          <th align="left">2</th><td>3</td><td>4</td><td>5</td><td>6</td>
+        </tr>
+        <tr align="right">
+          <th align="left">3</th><td>5</td><td>7</td><td>9</td><td>11</td>
+        </tr>
+        <tr align="right">
+          <th align="left">4</th><td>7</td><td>10</td><td>13</td><td>16</td>
+        </tr>
+        <tr align="right">
+          <th align="left">5</th><td>9</td><td>13</td><td>17</td><td>21</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</TD>
+</TR>
+</TABLE>
+
+
+</body>
+</html>

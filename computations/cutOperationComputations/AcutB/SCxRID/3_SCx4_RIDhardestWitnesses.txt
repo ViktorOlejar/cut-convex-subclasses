@@ -1,0 +1,4 @@
+010212tff	01122333ffft	1 0 2 0 2 3 4 0 4 5 6 0 6 7 8 0 8 7 ffffffftt
+010212tff	01221333ffft	1 0 2 0 2 4 5 0 6 0 6 3 5 7 8 0 8 7 ffffffftt
+010212tff	01231233ffft	1 0 2 0 2 3 5 0 6 0 6 4 5 7 8 0 8 7 ffffffftt
+010212tff	12032230fftf	4 0 5 0 3 0 3 1 6 0 6 2 5 7 8 0 8 7 ffffffftt

@@ -23,18 +23,18 @@ import java.util.Stack;
  * Class that handles tests, whether a given SimpleDFA accepts a language of the
  * queried subclass of convex languages. Currently available subclass tests are:
  * 
- * LID - left ideal 
- * RID - right ideal 
+ * LID  - left ideal 
+ * RID  - right ideal 
  * TSID - two-sided ideal 
  * ASID - all-sided ideal 
- * PF - prefix free 
- * SF - suffix free 
- * FF - factor free 
- * SwF - subword free
- * PC - prefix closed 
- * SC - suffix closed 
- * FC - factor closed 
- * SwC - subword closed
+ * PF   - prefix-free 
+ * SF   - suffix-free 
+ * FF   - factor-free 
+ * SwF  - subword free
+ * PC   - prefix-closed 
+ * SC   - suffix-closed 
+ * FC   - factor-closed 
+ * SwC  - subword-closed
  * 
  * The subword freeness test is incomplete! There exist DFAs accepting subword
  * free languages that are not captured. The improvement of the test is left for
@@ -143,11 +143,11 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		// find the unique final state
 		int uniqueFinalStateIndex = -1;
 		for (int state = 0; state < dfa.getFinalityArray().length; state++) {
-			if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex == -1) {
+			if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex == -1)
 				uniqueFinalStateIndex = state;
-			} else if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex != -1) {
+			else if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex != -1)
 				return false;
-			}
+
 		}
 
 		// check whether every transition from the unique final state goes to the
@@ -186,18 +186,16 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 	private int[] getNonExitingFinalSinkState(SimpleDFA dfa) {
 		int uniqueFinalStateIndex = -1;
 		for (int state = 0; state < dfa.getFinalityArray().length; state++) {
-			if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex == -1) {
+			if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex == -1)
 				uniqueFinalStateIndex = state;
-			} else if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex != -1) {
+			else if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex != -1)
 				return new int[0];
-			}
 		}
 
 		Stack<Integer> nStatesOfFinal = getSubsequentNeighbourStates(dfa, uniqueFinalStateIndex);
 		int sinkStateIndex = -1;
 		if (nStatesOfFinal.size() < dfa.getAlphabetSize())
 			return new int[0];
-		;
 
 		while (!nStatesOfFinal.empty()) {
 			int neigh = nStatesOfFinal.pop().intValue();
@@ -210,10 +208,10 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		if (sinkStateIndex == -1)
 			return new int[0];
 
-		for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
+		for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++)
 			if (dfa.getTransitionMatrix()[sinkStateIndex][symbol] != sinkStateIndex)
 				return new int[0];
-		}
+
 		int[] result = { uniqueFinalStateIndex, sinkStateIndex };
 		return result;
 	}

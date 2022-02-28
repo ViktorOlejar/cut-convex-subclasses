@@ -39,7 +39,7 @@ public class SimpleDFA {
 	private boolean[] finalityArray;
 
 	/**
-	 * Constructor for DFA implementation.
+	 * Constructor for DFA implementation. The size of the alphabet is limited to 26.
 	 * 
 	 * @param numberOfStates
 	 * @param alphabetSize

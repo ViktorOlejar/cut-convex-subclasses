@@ -124,16 +124,8 @@ public class SimpleMNFA {
 		return numberOfStates;
 	}
 
-	public void setNumberOfStates(int numberOfStates) {
-		this.numberOfStates = numberOfStates;
-	}
-
 	public int getAlphabetSize() {
 		return alphabetSize;
-	}
-
-	public void setAlphabetSize(int alphabetSize) {
-		this.alphabetSize = alphabetSize;
 	}
 
 	public ArrayList<ArrayList<HashSet<Integer>>> getTransitionMatrix() {

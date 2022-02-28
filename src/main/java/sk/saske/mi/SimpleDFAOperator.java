@@ -326,16 +326,16 @@ public class SimpleDFAOperator {
 			for (Integer stateInteger : cl.getStatesInClass()) {
 
 				int state = stateInteger.intValue();
-				SimpleAutomatonEquivalenceClass originClass = partitionIterations.get(0).getPartitionOfState(state);
+				SimpleAutomatonEquivalenceClass originClass = partitionIterations.get(0).getClassOfState(state);
 				int[] stateClassTransitions = new int[automaton.getAlphabetSize()];
 
 				for (int i = 0; i < stateClassTransitions.length; i++) {
 					int targetClass = partitionIterations.get(0)
-							.getPartitionIndexOfState(automaton.applySingleInput(state, i));
+							.getClassIndexOfState(automaton.applySingleInput(state, i));
 					stateClassTransitions[i] = targetClass;
 				}
 
-				int belongsToClassIndex = secondPartition.containsStateClassTransition(state, stateClassTransitions,
+				int belongsToClassIndex = secondPartition.containsStateClassTransition(stateClassTransitions,
 						originClass);
 				if (belongsToClassIndex == -1) {
 					secondPartition.addNewClass(state, stateClassTransitions.length, stateClassTransitions,
@@ -360,16 +360,16 @@ public class SimpleDFAOperator {
 
 					int state = stateInteger.intValue();
 					SimpleAutomatonEquivalenceClass originClass = partitionIterations.get(partitionRefinementCounter)
-							.getPartitionOfState(state);
+							.getClassOfState(state);
 					int[] stateClassTransitions = new int[automaton.getAlphabetSize()];
 
 					for (int i = 0; i < stateClassTransitions.length; i++) {
 						int targetClass = partitionIterations.get(partitionRefinementCounter)
-								.getPartitionIndexOfState(automaton.applySingleInput(state, i));
+								.getClassIndexOfState(automaton.applySingleInput(state, i));
 						stateClassTransitions[i] = targetClass;
 					}
 
-					int belongsToClassIndex = newPartition.containsStateClassTransition(state, stateClassTransitions,
+					int belongsToClassIndex = newPartition.containsStateClassTransition(stateClassTransitions,
 							originClass);
 					if (belongsToClassIndex == -1) {
 						newPartition.addNewClass(state, stateClassTransitions.length, stateClassTransitions,
@@ -396,7 +396,7 @@ public class SimpleDFAOperator {
 	private SimpleDFA removeUnreachableStates(SimpleDFA automaton) {
 		boolean[] reachableStates = new boolean[automaton.getNumberOfStates()];
 
-		LinkedList<Integer> queue = new LinkedList<Integer>();
+		LinkedList<Integer> queue = new LinkedList<>();
 		HashMap<Integer, Integer> stateMapping = new HashMap<>();
 
 		reachableStates[0] = true;
@@ -467,7 +467,7 @@ public class SimpleDFAOperator {
 	public Stack<Integer> getSubsequentNeighbourStates(SimpleDFA automaton, int state) {
 		Stack<Integer> result = new Stack<>();
 		for (int symbol = 0; symbol < automaton.getAlphabetSize(); symbol++) {
-			if (!(automaton.getTransitionMatrix()[state][symbol] == state))
+			if (automaton.getTransitionMatrix()[state][symbol] != state)
 				result.add(automaton.getTransitionMatrix()[state][symbol]);
 		}
 		return result;
@@ -521,7 +521,7 @@ public class SimpleDFAOperator {
 			}
 		}
 
-		int initStatePartition = partition.getInitPartitionNumber();
+		int initStatePartition = partition.getInitClassNumber();
 
 		SimpleDFA automaton = new SimpleDFA(numOfStates, alphabetSize, transitionMatrix, finalityArray);
 		changeInitialState(initStatePartition, automaton);

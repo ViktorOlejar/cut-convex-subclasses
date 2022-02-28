@@ -1,0 +1,5 @@
+01023201ffft	0111tf	1 0 2 0 2 4 5 0 3 0 5 4 fffttt
+01023211ffft	0111tf	1 0 2 0 2 4 5 0 3 1 5 4 fffttt
+01023221ffft	0111tf	1 0 2 0 2 4 5 0 3 2 5 4 fffttt
+01023231ffft	0111tf	1 0 2 0 2 5 4 0 4 5 3 5 fffttt
+01213132ffft	0111tf	1 0 1 2 1 5 3 2 3 5 4 5 fffttt

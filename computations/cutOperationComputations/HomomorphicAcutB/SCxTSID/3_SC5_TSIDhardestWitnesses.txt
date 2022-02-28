@@ -1,0 +1,3 @@
+010212tff	0121324344fffft	0 1 0 2 3 2 0 4 5 4 0 6 7 6 0 8 7 8 ffffffftt
+012101tff	0112233444fffft	0 1 2 3 0 3 4 5 0 5 6 7 0 7 8 7 0 7 ffffffftt
+012101tff	1112233444fffft	0 1 2 3 0 3 4 5 0 5 6 7 0 7 8 7 0 7 ffffffftt

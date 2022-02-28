@@ -1,0 +1,3 @@
+01020313tfff	011222ttf	4 0 2 0 2 3 1 0 5 0 6 0 6 7 8 0 9 0 9 3 tffftttttt
+01021323tfff	011222ttf	4 0 2 3 2 1 1 0 5 0 6 7 6 8 8 0 9 3 9 1 tffftttttt
+01021333tfff	011222ttf	4 0 2 3 2 2 1 0 5 0 6 7 6 9 8 0 9 3 9 2 tffftttttt

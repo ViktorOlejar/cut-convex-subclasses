@@ -1,0 +1,4 @@
+12113123fftf	01020333tttf	1 4 1 1 4 2 3 6 5 6 4 7 3 8 4 9 3 1 4 2 fffttttttt
+12113123fftf	01021333tttf	1 4 1 1 4 2 3 6 5 6 4 7 3 8 4 9 6 1 4 2 fffttttttt
+12113123fftf	01022333tttf	1 4 1 1 4 2 3 6 5 6 4 7 3 8 4 9 8 1 4 2 fffttttttt
+12113123fftf	01023333tttf	1 4 1 1 4 2 3 6 5 6 4 7 3 8 4 9 1 1 4 2 fffttttttt

@@ -1,0 +1,6 @@
+010212tff	01203233tttf	0 3 2 1 0 1 0 5 0 6 4 6 7 5 0 8 2 8 tfftttttt
+010212tff	01223033tttf	0 6 2 1 0 1 0 7 3 7 0 4 0 8 5 8 2 4 tfftttttt
+010212tff	01232230ttft	0 3 2 1 0 1 0 5 0 7 4 7 0 8 6 8 2 5 tfftttttt
+010212tff	12003133tttf	0 3 2 1 0 1 0 5 0 7 6 7 0 8 4 8 2 5 tfftttttt
+010212tff	12013033tttf	0 5 2 1 0 1 0 4 6 4 0 7 0 8 3 8 2 7 tfftttttt
+010212tff	12113300tftt	0 4 2 1 0 1 0 5 0 7 6 7 0 8 3 8 2 5 tfftttttt
