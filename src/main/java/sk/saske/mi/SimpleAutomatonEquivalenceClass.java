@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Viktor Olejár
+ * Copyright (C) 2022 Viktor Olejár
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ public class SimpleAutomatonEquivalenceClass {
 		this.statesInClass = new HashSet<>();
 		this.classTransition = new int[alphabetSize];
 		if (alphabetSize != characteristicTransitions.length)
-			throw new RuntimeException("Nevhodne prechody v triede ekvivalencie!");
+			throw new RuntimeException("Wrong transitions in equavalence class.");
 		for (int i = 0; i < characteristicTransitions.length; i++) {
 			classTransition[i] = characteristicTransitions[i];
 		}
@@ -68,7 +68,7 @@ public class SimpleAutomatonEquivalenceClass {
 		this.statesInClass.add(state);
 		this.classTransition = new int[alphabetSize];
 		if (alphabetSize != characteristicTransitions.length)
-			throw new RuntimeException("Nevhodne prechody v triede ekvivalencie!");
+			throw new RuntimeException("Wrong transitions in equavalence class.");
 		for (int i = 0; i < characteristicTransitions.length; i++) {
 			this.classTransition[i] = characteristicTransitions[i];
 		}
@@ -82,7 +82,7 @@ public class SimpleAutomatonEquivalenceClass {
 		this.isFinal = finality;
 		this.classTransition = new int[alphabetSize];
 		if (alphabetSize != characteristicTransitions.length)
-			throw new RuntimeException("Nevhodne prechody v triede ekvivalencie!");
+			throw new RuntimeException("Wrong transitions in equavalence class.");
 		for (int i = 0; i < characteristicTransitions.length; i++) {
 			this.classTransition[i] = characteristicTransitions[i];
 		}

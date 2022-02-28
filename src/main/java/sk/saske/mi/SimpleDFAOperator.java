@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Viktor Olejár
+ * Copyright (C) 2022 Viktor Olejár
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,11 +25,24 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-public class SimpleDFAOperator {
-	
-	private List<int[]> stateNumberPermutation = new ArrayList<>();
-	private List<SimpleDFA> automatonStatePermutations= new ArrayList<>();
+/**
+ * 
+ * Class providing some basic operations on DFAs and MNFAs.
+ *
+ */
 
+public class SimpleDFAOperator {
+
+	// auxiliary variables for saving possible DFA state renumberings
+	private List<int[]> stateNumberPermutation = new ArrayList<>();
+	private List<SimpleDFA> automatonStatePermutations = new ArrayList<>();
+
+	/**
+	 * Modify input DFA, so that it accepts the complement of the input language.
+	 * 
+	 * @param dfa
+	 * @return SimpleDFA
+	 */
 	public SimpleDFA complement(SimpleDFA dfa) {
 		boolean[] newFinality = new boolean[dfa.getNumberOfStates()];
 		for (int i = 0; i < newFinality.length; i++) {
@@ -38,6 +51,12 @@ public class SimpleDFAOperator {
 		return new SimpleDFA(dfa.getNumberOfStates(), dfa.getAlphabetSize(), dfa.getTransitionMatrix(), newFinality);
 	}
 
+	/**
+	 * Modify input DFA, so that it accepts the reverse of the input language.
+	 * 
+	 * @param dfa
+	 * @return SimpleMNFA
+	 */
 	public SimpleMNFA reverse(SimpleDFA dfa) {
 		ArrayList<ArrayList<HashSet<Integer>>> mnfaTransitions = reverseTransitions(dfa);
 		boolean[] initialStates = dfa.getFinalityArray();
@@ -48,32 +67,69 @@ public class SimpleDFAOperator {
 				finalStates, false);
 	}
 
-	private int calculateIntersectionIndex(int numOfStates, int state1Index, int state2Index) {
-		return (numOfStates * state1Index) + state2Index;
+	/**
+	 * Support method for computing the reversed transitions for the reversal
+	 * operation.
+	 * 
+	 * @param dfa
+	 * @return transition function for the reversed MNFA
+	 */
+	private ArrayList<ArrayList<HashSet<Integer>>> reverseTransitions(SimpleDFA dfa) {
+		ArrayList<ArrayList<HashSet<Integer>>> revTransitFunc = new ArrayList<>();
+
+		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
+			revTransitFunc.add(new ArrayList<>());
+			for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
+				revTransitFunc.get(state).add(new HashSet<>());
+			}
+		}
+
+		int sourceState = -1;
+		for (int targetStates = 0; targetStates < dfa.getNumberOfStates(); targetStates++) {
+			for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
+				sourceState = dfa.applySingleInput(targetStates, symbol);
+				revTransitFunc.get(sourceState).get(symbol).add(targetStates);
+			}
+		}
+		return revTransitFunc;
 	}
-	
+
+	/**
+	 * Returns whether the input DFA accepts the empty language.
+	 * 
+	 * @param dfa
+	 * @return boolean
+	 */
 	public boolean isEmptyLanguage(SimpleDFA dfa) {
 		SimpleDFA dfaMin = minimize(dfa);
-		
-		if(dfaMin.getNumberOfStates() != 1)
+
+		if (dfaMin.getNumberOfStates() != 1)
 			return false;
-	
-		if(dfaMin.getFinalityArray()[0])
+
+		if (dfaMin.getFinalityArray()[0])
 			return false;
-		
+
 		for (int symbol = 0; symbol < dfaMin.getAlphabetSize(); symbol++) {
-			if(dfaMin.applySingleInput(0, symbol) != 0)
+			if (dfaMin.applySingleInput(0, symbol) != 0)
 				return false;
-		}		
-				
+		}
+
 		return true;
 	}
 
+	/**
+	 * Returns the DFA accepting the intersection of languages accepted by the two
+	 * input DFAs.
+	 * 
+	 * @param dfa1
+	 * @param dfa2
+	 * @return SimpleDFA
+	 */
 	public SimpleDFA intersection(SimpleDFA dfa1, SimpleDFA dfa2) {
 		int numOfStates = dfa1.getNumberOfStates() * dfa2.getNumberOfStates();
 		int minNumOfStates = Math.min(dfa1.getNumberOfStates(), dfa2.getNumberOfStates());
 		if (dfa1.getAlphabetSize() != dfa2.getAlphabetSize()) {
-			System.err.println("Unequal alphabet size for intersection...");
+			System.err.println("Unequal alphabet size for intersection.");
 			return null;
 		}
 		int alphabetSize = dfa1.getAlphabetSize();
@@ -106,26 +162,20 @@ public class SimpleDFAOperator {
 		return new SimpleDFA(numOfStates, alphabetSize, transitionMatrix, finalityArray);
 	}
 
-	private ArrayList<ArrayList<HashSet<Integer>>> reverseTransitions(SimpleDFA dfa) {
-		ArrayList<ArrayList<HashSet<Integer>>> result = new ArrayList<>();
-
-		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
-			result.add(new ArrayList<>());
-			for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
-				result.get(state).add(new HashSet<>());
-			}
-		}
-
-		int sourceState = -1;
-		for (int targetStates = 0; targetStates < dfa.getNumberOfStates(); targetStates++) {
-			for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
-				sourceState = dfa.applySingleInput(targetStates, symbol);
-				result.get(sourceState).get(symbol).add(targetStates);
-			}
-		}
-		return result;
+	/**
+	 * Support method for the intersection operation to calculate correct transition
+	 * matrix indexes.
+	 * 
+	 * @param numOfStates
+	 * @param state1Index
+	 * @param state2Index
+	 * @return int
+	 */
+	private int calculateIntersectionIndex(int numOfStates, int state1Index, int state2Index) {
+		return (numOfStates * state1Index) + state2Index;
 	}
 
+	
 	public SimpleDFA determinize(SimpleMNFA mnfa) {
 		int numOfStates;
 		int alphabetSize = mnfa.getAlphabetSize();
@@ -141,7 +191,6 @@ public class SimpleDFAOperator {
 		int stateCounter = 1;
 
 		SimpleMNFA completeMNFA = makeComplete(mnfa);
-		// SimpleMNFA completeMNFA = removeMultipleInitialStates(completeMNFA);
 
 		HashSet<Integer> init = new HashSet<>();
 		for (int i = 0; i < completeMNFA.getNumberOfStates(); i++) {
@@ -201,43 +250,6 @@ public class SimpleDFAOperator {
 		return new SimpleDFA(numOfStates, alphabetSize, transitionMatrix, finalityArray);
 	}
 
-	public SimpleMNFA removeMultipleInitialStates(SimpleMNFA mnfa) {
-		//NOT GOOD!!!
-		HashSet<Integer> initialStates = new HashSet<>();
-		int newStateCounter = 1;
-		HashMap<Integer, Integer> toResultMNFAStateMorphism = new HashMap<>();
-
-		boolean finalityFlag = false;
-		for (int states = 0; states < mnfa.getNumberOfStates(); states++) {
-			if (mnfa.getInitialityArray()[states]) {
-				initialStates.add(states);
-				toResultMNFAStateMorphism.put(states, 0);
-				if (mnfa.getFinalityArray()[states])
-					finalityFlag = true;
-			} else {
-				toResultMNFAStateMorphism.put(states, newStateCounter);
-				newStateCounter++;
-			}
-		}
-
-		SimpleMNFA result = new SimpleMNFA(mnfa.getNumberOfStates() - initialStates.size() + 1, mnfa.getAlphabetSize());
-		result.getInitialityArray()[0] = true;
-		result.getFinalityArray()[0] = finalityFlag;
-
-		for (int state = 0; state < mnfa.getNumberOfStates(); state++) {
-			int newSource = toResultMNFAStateMorphism.get(state);
-			if (mnfa.getFinalityArray()[state])
-				result.getFinalityArray()[newSource] = true;
-			for (int symbol = 0; symbol < mnfa.getAlphabetSize(); symbol++) {
-				for (Integer targetState : mnfa.applySingleInput(state, symbol)) {
-					int newTarget = toResultMNFAStateMorphism.get(targetState);
-					result.getTransitionMatrix().get(newSource).get(symbol).add(newTarget);
-				}
-			}
-		}
-		return result;
-	}
-
 	public SimpleMNFA makeComplete(SimpleMNFA mnfa) {
 		int numberOfStates = mnfa.getNumberOfStates() + 1;
 		int alphabetSize = mnfa.getAlphabetSize();
@@ -263,7 +275,7 @@ public class SimpleDFAOperator {
 			initialityArray[state] = mnfa.getInitialityArray()[state];
 		}
 
-		// add Dead state transitions for completeness
+		// add dead state transitions for completeness
 		transitionMatrix.add(new ArrayList<>());
 		for (int symbol = 0; symbol < alphabetSize; symbol++) {
 			transitionMatrix.get(deadState).add(new HashSet<>());
@@ -436,9 +448,7 @@ public class SimpleDFAOperator {
 		if (pComp.compare(p, k) == 0)
 			if (pComp.isSameContent())
 				return true;
-
 		return false;
-
 	}
 
 	private SimpleDFA createAutomatonFromPartition(SimpleAutomatonStatePartition partition) {
@@ -524,32 +534,6 @@ public class SimpleDFAOperator {
 		return result;
 	}
 
-	private void returnAllRecursive(int n, int[] elements) {
-
-		if (n == 1) {
-			stateNumberPermutation.add(elements.clone());
-		} else {
-
-			for (int i = 0; i < n; i++) {
-				returnAllRecursive(n - 1, elements);
-				if (i < n - 1) {
-					if (n % 2 == 0) {
-						swap(elements, i, n - 1);
-					} else {
-						swap(elements, 0, n - 1);
-					}
-				}
-			}
-
-		}
-	}
-
-	private void swap(int[] input, int a, int b) {
-		int tmp = input[a];
-		input[a] = input[b];
-		input[b] = tmp;
-	}
-
 	private void returnAllRecursive(int n, int[] elements, SimpleDFA dfa) {
 
 		if (n == 1) {
@@ -559,13 +543,12 @@ public class SimpleDFAOperator {
 
 			for (int i = 0; i < n; i++) {
 				returnAllRecursive(n - 1, elements, dfa);
-				if (i < n - 1) {
-					if (n % 2 == 0) {
+				if (i < n - 1)
+					if (n % 2 == 0)
 						swap(elements, i, n - 1, dfa);
-					} else {
+					else
 						swap(elements, 0, n - 1, dfa);
-					}
-				}
+
 			}
 
 		}
@@ -578,36 +561,6 @@ public class SimpleDFAOperator {
 		input[a] = input[b];
 		input[b] = tmp;
 
-	}
-
-	private SimpleDFA renumberAutomaton(SimpleDFA dfa, int[] mapping) {
-		int[][] tm = new int[dfa.getNumberOfStates()][dfa.getAlphabetSize()];
-		boolean[] fa = new boolean[dfa.getNumberOfStates()];
-
-		for (int i = 0; i < fa.length; i++) {
-			tm[i] = Arrays.copyOf(dfa.getTransitionMatrix()[i], dfa.getAlphabetSize());
-		}
-
-		fa = Arrays.copyOf(dfa.getFinalityArray(), fa.length);
-
-		SimpleDFA result = new SimpleDFA(dfa.getNumberOfStates(), dfa.getAlphabetSize(), tm, fa);
-
-		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
-			result.getTransitionMatrix()[state] = Arrays.copyOf(dfa.getTransitionMatrix()[mapping[state]],
-					dfa.getAlphabetSize());
-		}
-
-		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
-			for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
-				result.getTransitionMatrix()[state][symbol] = mapping[result.getTransitionMatrix()[state][symbol]];
-			}
-		}
-
-		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
-			result.getFinalityArray()[state] = dfa.getFinalityArray()[mapping[state]];
-		}
-
-		return result;
 	}
 
 	private void renumberThisAutomaton(SimpleDFA dfa, int stateA, int stateB) {
@@ -636,17 +589,17 @@ public class SimpleDFAOperator {
 		dfa.getFinalityArray()[stateB] = aFinal;
 
 	}
-	
+
 	public SimpleDFA homomorphicImage(SimpleDFA dfa, int[] alphabetMapping) {
 		if (alphabetMapping.length != dfa.getAlphabetSize()) {
-			System.err.println("Inconsistent mapping with alphabet size");
+			System.err.println("Inconsistent mapping with alphabet size.");
 			return null;
 		}
-		
+
 		int numOfStates = dfa.getNumberOfStates();
 		int alphabetSize = dfa.getAlphabetSize();
 		boolean[] finalityArray = Arrays.copyOf(dfa.getFinalityArray(), dfa.getFinalityArray().length);
-		
+
 		int[][] transitionMatrix = new int[numOfStates][alphabetSize];
 		for (int symbol = 0; symbol < alphabetSize; symbol++) {
 			for (int state = 0; state < numOfStates; state++) {

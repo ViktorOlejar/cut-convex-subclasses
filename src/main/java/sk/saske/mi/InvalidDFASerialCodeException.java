@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Viktor Olejár
+ * Copyright (C) 2022 Viktor Olejár
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,27 +16,33 @@
 
 package sk.saske.mi;
 
-@SuppressWarnings("serial")
-public class InvalidCevorovaCodeException extends RuntimeException {
+/**
+ * 
+ * Custom exception for various DFA serial code errors.
+ *
+ */
 
-	public InvalidCevorovaCodeException() {
+@SuppressWarnings("serial")
+public class InvalidDFASerialCodeException extends RuntimeException {
+
+	public InvalidDFASerialCodeException() {
 		super();
 	}
 
-	public InvalidCevorovaCodeException(String message, Throwable cause, boolean enableSuppression,
+	public InvalidDFASerialCodeException(String message, Throwable cause, boolean enableSuppression,
 			boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
-	public InvalidCevorovaCodeException(String message, Throwable cause) {
+	public InvalidDFASerialCodeException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
-	public InvalidCevorovaCodeException(String message) {
+	public InvalidDFASerialCodeException(String message) {
 		super(message);
 	}
 
-	public InvalidCevorovaCodeException(Throwable cause) {
+	public InvalidDFASerialCodeException(Throwable cause) {
 		super(cause);
 	}
 

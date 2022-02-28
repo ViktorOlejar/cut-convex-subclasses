@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Viktor Olejár
+ * Copyright (C) 2022 Viktor Olejár
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,7 @@ public class AdjMatrixGraph {
 	}
 
 	/**
-	 * Returns neighbour indexes of a given node.
+	 * Returns neighbor indexes of a given node.
 	 * 
 	 * @param vertex
 	 * @return int[]

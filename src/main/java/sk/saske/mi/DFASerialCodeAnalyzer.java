@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Viktor Olejár
+ * Copyright (C) 2022 Viktor Olejár
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,13 @@
 package sk.saske.mi;
 
 
-public class ModifiedCevorovaCodeAnalyzer {
+public class DFASerialCodeAnalyzer {
 	private static final int MAX_ALPHABET_SIZE = 26;
 
 	private SimpleDFA automaton;
 	private String automatonCode;
 
-	public ModifiedCevorovaCodeAnalyzer(int numOfStates, int alphabetSize) {
+	public DFASerialCodeAnalyzer(int numOfStates, int alphabetSize) {
 		automaton = new SimpleDFA();
 		automaton.setAlphabetSize(alphabetSize);
 		automaton.setNumberOfStates(numOfStates);
@@ -32,7 +32,7 @@ public class ModifiedCevorovaCodeAnalyzer {
 	public void parse(String code) {
 		try {
 			if (code.length() < 1)
-				throw new InvalidCevorovaCodeException("Incomplete automaton code!");
+				throw new InvalidDFASerialCodeException("Incomplete automaton code.");
 
 			code = code.trim();
 
@@ -43,10 +43,10 @@ public class ModifiedCevorovaCodeAnalyzer {
 
 			initializeFinalityArray(codeSuffix);
 			initializeTransitionMatrix(codeTransitions);
-		} catch (InvalidCevorovaCodeException e) {
+		} catch (InvalidDFASerialCodeException e) {
 			throw e;
 		} catch (Exception e) {
-			throw new InvalidCevorovaCodeException("Something went wrong, please check input file.");
+			throw new InvalidDFASerialCodeException("Check validity of input DFA code.");
 		}
 
 	}
@@ -54,7 +54,7 @@ public class ModifiedCevorovaCodeAnalyzer {
 	private void initializeTransitionMatrix(String codeTransitions) {
 
 		if (automaton.getAlphabetSize() > MAX_ALPHABET_SIZE)
-			throw new InvalidCevorovaCodeException("Alphabet size too large (greater than " + MAX_ALPHABET_SIZE + ")!");
+			throw new InvalidDFASerialCodeException("Alphabet size too large (greater than " + MAX_ALPHABET_SIZE + ").");
 
 		int[][] transitionMatrix = new int[automaton.getNumberOfStates()][automaton.getAlphabetSize()];
 
@@ -63,8 +63,8 @@ public class ModifiedCevorovaCodeAnalyzer {
 
 			if (Character.getNumericValue(codeTransitions.charAt(i)) < 0
 					|| Character.getNumericValue(codeTransitions.charAt(i)) >= automaton.getNumberOfStates()) {
-				throw new InvalidCevorovaCodeException(
-						"Invalid transition code at index " + codeTransitions.charAt(i) + " !");
+				throw new InvalidDFASerialCodeException(
+						"Invalid transition code at index " + codeTransitions.charAt(i) + " .");
 			} else {
 				transitionMatrix[currState][i % automaton.getAlphabetSize()] = Character
 						.getNumericValue(codeTransitions.charAt(i));
@@ -89,8 +89,8 @@ public class ModifiedCevorovaCodeAnalyzer {
 				break;
 
 			default:
-				throw new InvalidCevorovaCodeException(
-						"Invalid state finality sequence! Unknown finality character: " + codeSuffix.charAt(i));
+				throw new InvalidDFASerialCodeException(
+						"Invalid state finality sequence. Unknown finality character: " + codeSuffix.charAt(i));
 			}
 		}
 		automaton.setFinalityArray(finalityArray);
@@ -98,14 +98,14 @@ public class ModifiedCevorovaCodeAnalyzer {
 
 	public SimpleDFA getParsedAutomaton() {
 		if (automaton.getFinalityArray() == null) {
-			throw new RuntimeException("No automaton parsed!!!");
+			throw new RuntimeException("No automaton parsed.");
 		}
 		return automaton;
 	}
 
 	public String getParsedAutomatonCode() {
 		if (automatonCode == null) {
-			throw new RuntimeException("No automaton parsed!!!");
+			throw new RuntimeException("No automaton parsed.");
 		}
 		return automatonCode;
 	}

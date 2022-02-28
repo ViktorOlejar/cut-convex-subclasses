@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Viktor Olejár
+ * Copyright (C) 2022 Viktor Olejár
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,24 +16,56 @@
 
 package sk.saske.mi;
 
+/**
+ * 
+ * Class for constructing the cut automaton of two given DFAs. The
+ * implementation is based on the construction provided in:
+ * 
+ * Berglund, Martin & Björklund, Henrik & Drewes, Frank & Van Der Merwe, Brink &
+ * Watson, Bruce. (2013). Cuts in Regular Expressions. 70-81.
+ * 10.1007/978-3-642-38771-5_8.
+ *
+ */
 public class CutAutomaton {
 
+	// the resulting cut automaton
 	private SimpleDFA automaton;
 
+	// auxiliary values for construction
 	private int automatonANumberOfStates;
 	private int automatonBNumberOfStates;
-
+	@SuppressWarnings("unused")
 	private boolean isTheInitialOfAFinal;
 
-	public CutAutomaton(ModifiedCevorovaCodeAnalyzer a, ModifiedCevorovaCodeAnalyzer b) {
+	/**
+	 * Constructor for the cut automaton.
+	 * 
+	 * @param a - serial code object corresponding to the first input DFA
+	 * @param b - serial code object corresponding to the second input DFA
+	 */
+	public CutAutomaton(DFASerialCodeAnalyzer a, DFASerialCodeAnalyzer b) {
 		cut(a.getParsedAutomaton().getTransitionMatrix(), b.getParsedAutomaton().getTransitionMatrix(),
 				a.getParsedAutomaton().getFinalityArray(), b.getParsedAutomaton().getFinalityArray());
 	}
 
+	/**
+	 * Constructor for the cut automaton.
+	 * 
+	 * @param a - first input DFA
+	 * @param b - second input DFA
+	 */
 	public CutAutomaton(SimpleDFA a, SimpleDFA b) {
 		cut(a.getTransitionMatrix(), b.getTransitionMatrix(), a.getFinalityArray(), b.getFinalityArray());
 	}
 
+	/**
+	 * Applies the cut automaton construction on two input DFAs.
+	 * 
+	 * @param transitionMatrixA
+	 * @param transitionMatrixB
+	 * @param finalityArrayA
+	 * @param finalityArrayB
+	 */
 	private void cut(int[][] transitionMatrixA, int[][] transitionMatrixB, boolean[] finalityArrayA,
 			boolean[] finalityArrayB) {
 		automatonANumberOfStates = transitionMatrixA.length;
@@ -113,6 +145,11 @@ public class CutAutomaton {
 
 	}
 
+	/**
+	 * Returns resulting cut automaton.
+	 * 
+	 * @return SimpleDFA
+	 */
 	public SimpleDFA getAutomaton() {
 		return automaton;
 	}
