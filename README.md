@@ -1,9 +1,9 @@
 # cut-convex-subclasses
-This repository contains supplementary computations and the source code for these computations for the paper: "State complexity of the cut operation in subclasses of convex languages" submitted to CIAA 2022: 26th International Conference on Implementation and Application of Automata. In order to be be familiar with the definitions and terminology used here, the reader should read the paper first before proceeding.
+This repository contains supplementary computations and the source code for these computations for the publication: *"State complexity of the cut operation in subclasses of convex languages"* submitted to CIAA 2022: 26th International Conference on Implementation and Application of Automata. In order to be be familiar with the definitions and terminology used here, we recommend the reader to read the publication before proceeding.
 
 ## automaton encoding explanation
 
-Let us explain the automaton encoding used in these computations by providing an example. Consider the deterministic finite automaton(DFA) depicted in the figure below:
+Let us explain the automaton encoding used in these computations by providing an example. Consider the deterministic finite automaton (DFA) depicted in the figure below:
 
 ![alt text](https://brasil.cel.agh.edu.pl/~11sustrojny/wp-content/uploads/2011/05/automat.jpg)
 
@@ -69,4 +69,5 @@ Contains cut operation computations organized according to the corresponding sub
 
 Contains a succinct overview of the results obtained in `cutOperationComputations` in HTML table format. It can be previewed at the following [link]( http://htmlpreview.github.io/?https://github.com/ViktorOlejar/cut-convex-subclasses/blob/main/computations/cutConvexTables.html).
 
+##LICENSE
 
