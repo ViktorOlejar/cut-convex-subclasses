@@ -69,5 +69,5 @@ Contains cut operation computations organized according to the corresponding sub
 
 Contains a succinct overview of the results obtained in `cutOperationComputations` in HTML table format. It can be previewed at the following [link]( http://htmlpreview.github.io/?https://github.com/ViktorOlejar/cut-convex-subclasses/blob/main/computations/cutConvexTables.html).
 
-##LICENSE
+## LICENSE
 
