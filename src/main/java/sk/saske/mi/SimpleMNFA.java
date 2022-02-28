@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2016 Viktor Olejár
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package sk.saske.mi;
 
 import java.util.ArrayList;
@@ -53,7 +69,6 @@ public class SimpleMNFA {
 
 	public SimpleMNFA(int numberOfStates, int alphabetSize, ArrayList<ArrayList<HashSet<Integer>>> transitionMatrix,
 			boolean[] initialityArray, boolean[] finalityArray, boolean complete) {
-		super();
 		this.numberOfStates = numberOfStates;
 		this.alphabetSize = alphabetSize;
 		this.transitionMatrix = transitionMatrix;
@@ -100,7 +115,7 @@ public class SimpleMNFA {
 
 	public boolean isInitial(int state) {
 		if (state >= numberOfStates) {
-			throw new RuntimeException("Invalid state - exceeding number of states for initiality array!");
+			throw new RuntimeException("Invalid state - exceeding number of states for initiality array.");
 		}
 		return initialityArray[state];
 	}
@@ -111,10 +126,10 @@ public class SimpleMNFA {
 
 	public HashSet<Integer> applySingleInput(int state, int symbol) {
 		if (symbol >= alphabetSize) {
-			throw new RuntimeException("Invalid symbol - exceeding alphabet size for transition!");
+			throw new RuntimeException("Invalid symbol - exceeding alphabet size for transition.");
 		}
 		if (state >= numberOfStates) {
-			throw new RuntimeException("Invalid state - exceeding number of states for transition!");
+			throw new RuntimeException("Invalid state - exceeding number of states for transition.");
 		}
 
 		return transitionMatrix.get(state).get(symbol);

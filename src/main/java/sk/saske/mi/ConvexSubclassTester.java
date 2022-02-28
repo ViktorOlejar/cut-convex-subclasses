@@ -1,9 +1,55 @@
+/*
+ * Copyright (C) 2016 Viktor Olejár
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package sk.saske.mi;
 
 import java.util.Stack;
 
+/**
+ * 
+ * Class that handles tests, whether a given SimpleDFA accepts a language of the
+ * queried subclass of convex languages. Currently available subclass tests are:
+ * 
+ * LID - left ideal 
+ * RID - right ideal 
+ * TSID - two-sided ideal 
+ * ASID - all-sided ideal 
+ * PF - prefix free 
+ * SF - suffix free 
+ * FF - factor free 
+ * SwF - subword free
+ * PC - prefix closed 
+ * SC - suffix closed 
+ * FC - factor closed 
+ * SwC - subword closed
+ * 
+ * The subword freeness test is incomplete! There exist DFAs accepting subword
+ * free languages that are not captured. The improvement of the test is left for
+ * future work.
+ */
 public class ConvexSubclassTester extends SimpleDFAOperator {
 
+	/**
+	 * Method testing subclass membership of a language given by a SimpleDFA.
+	 * 
+	 * @param subclass - Subclass abbreviation to test
+	 * @param dfa      - Deterministic finite automaton (accepted language to be
+	 *                 tested)
+	 * @return boolean - True means membership to given subclass, False otherwise
+	 */
 	public boolean testSubclass(String subclass, SimpleDFA dfa) {
 		switch (subclass) {
 		case "LID":
@@ -42,29 +88,41 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 
 			return isSubwordClosed(dfa);
 		default:
-			System.err.println("UNKNOWN SUBCLASS!!!");
+			System.err.println("Undefined subclass.");
 			return false;
 		}
 
 	}
 
-	// Freeness
+	/**
+	 * Returns whether given SimpleDFA accepts a prefix free language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isPrefixFree(SimpleDFA dfa) {
 		return isNonExiting(dfa);
 
 	}
 
-	public boolean isPrefixFree(SimpleMNFA mmnfa) {
-		return isPrefixFree(minimize(determinize(mmnfa)));
-
-	}
-
+	/**
+	 * Returns whether given SimpleDFA accepts a suffix free language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isSuffixFree(SimpleDFA dfa) {
 		if (isNonReturning(dfa))
-			return isPrefixFree(reverse(dfa));
+			return isPrefixFree(minimize(determinize(reverse(dfa))));
 		return false;
 	}
 
+	/**
+	 * Returns whether given SimpleDFA has the non-returning property.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	private boolean isNonReturning(SimpleDFA dfa) {
 		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
 			for (int symbol = 0; symbol < dfa.getAlphabetSize(); symbol++) {
@@ -75,7 +133,14 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		return true;
 	}
 
+	/**
+	 * Returns whether given SimpleDFA has the non-exiting property.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	private boolean isNonExiting(SimpleDFA dfa) {
+		// find the unique final state
 		int uniqueFinalStateIndex = -1;
 		for (int state = 0; state < dfa.getFinalityArray().length; state++) {
 			if (dfa.getFinalityArray()[state] && uniqueFinalStateIndex == -1) {
@@ -85,6 +150,8 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 			}
 		}
 
+		// check whether every transition from the unique final state goes to the
+		// non-final sink state (assuming minimality)
 		Stack<Integer> nStatesOfFinal = getSubsequentNeighbourStates(dfa, uniqueFinalStateIndex);
 		int sinkStateIndex = -1;
 		if (nStatesOfFinal.size() < dfa.getAlphabetSize())
@@ -108,6 +175,14 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		return true;
 	}
 
+	/**
+	 * Returns the state indexes of the unique final state and non-final sink state
+	 * in a given SimpleDFA. Returns default int array if the DFA does not have
+	 * non-exiting property.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return int[]
+	 */
 	private int[] getNonExitingFinalSinkState(SimpleDFA dfa) {
 		int uniqueFinalStateIndex = -1;
 		for (int state = 0; state < dfa.getFinalityArray().length; state++) {
@@ -143,11 +218,24 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		return result;
 	}
 
+	/**
+	 * Returns whether given SimpleDFA accepts a factor free language. Algorithm
+	 * implementation based on the publication:
+	 * 
+	 * Yo-subhan, & Yajunwang, & Derickwood,. (2011). INFIX-FREE REGULAR EXPRESSIONS
+	 * AND LANGUAGES. International Journal of Foundations of Computer Science. 17.
+	 * 10.1142/S0129054106003887.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isFactorFree(SimpleDFA inputDfa) {
 
+		// test necessary properties
 		if (!isNonReturning(inputDfa) || !isNonExiting(inputDfa))
 			return false;
-
+		// algorithm is sensitive to improper DFA state indexing - we renumber DFA
+		// states to find the optimal indexing
 		permutationLoop: for (SimpleDFA dfa : getAutomatonStatePermutations(inputDfa)) {
 
 			int[] correctNumbering = getNonExitingFinalSinkState(dfa);
@@ -172,17 +260,13 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		return false;
 	}
 
-	private boolean isSubword(String u, String v) {
-		int i = 0, j = 0;
-		while (i < u.length() && j < v.length()) {
-			if (u.charAt(i) == v.charAt(j)) {
-				i++;
-			}
-			j++;
-		}
-		return i == u.length();
-	}
-
+	/**
+	 * Returns whether given SimpleDFA accepts a subword free language. TEST
+	 * INCOMPLETE - left for future work
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isSubwordFree(SimpleDFA inputDfa) {
 
 		permutationLoop: for (SimpleDFA dfa : getAutomatonStatePermutations(inputDfa)) {
@@ -231,31 +315,58 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		return false;
 	}
 
-	// Closedness
+	/**
+	 * Returns whether given SimpleDFA accepts a prefix closed language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isPrefixClosed(SimpleDFA dfa) {
-		// compl PC is RID
+		// complement of PC is RID
 		return isRightIdeal(complement(dfa));
 	}
 
+	/**
+	 * Returns whether given SimpleDFA accepts a suffix closed language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isSuffixClosed(SimpleDFA dfa) {
-		// compl SC is LID
+		// complement of SC is LID
 		return isLeftIdeal(complement(dfa));
 	}
 
+	/**
+	 * Returns whether given SimpleDFA accepts a factor closed language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isFactorClosed(SimpleDFA dfa) {
-		// compl FC is 2ID
+		// complement of FC is 2ID
 		return isTwoSidedIdeal(complement(dfa));
 	}
 
+	/**
+	 * Returns whether given SimpleDFA accepts a subword closed language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isSubwordClosed(SimpleDFA dfa) {
-		// compl SwC is AllID
+		// complement of SwC is AllID
 		return isAllSidedIdeal(complement(dfa));
 	}
 
-	// Ideality
+	/**
+	 * Returns whether given SimpleDFA accepts a right ideal language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isRightIdeal(SimpleDFA dfa) {
-		// undead -> is sink, but final
-
+		// identify the unique final sink state
 		int undeadCandidate = -1;
 		for (int state = 0; state < dfa.getNumberOfStates(); state++) {
 			if (dfa.getFinalityArray()[state] && undeadCandidate == -1) {
@@ -273,25 +384,39 @@ public class ConvexSubclassTester extends SimpleDFAOperator {
 		return true;
 	}
 
-	private boolean isRightIdeal(SimpleMNFA mnfa) {
-		return isRightIdeal(minimize(determinize(mnfa)));
-	}
-
+	/**
+	 * Returns whether given SimpleDFA accepts a left ideal language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isLeftIdeal(SimpleDFA dfa) {
-		return isRightIdeal(reverse(dfa));
+		return isRightIdeal(minimize(determinize(reverse(dfa))));
 	}
 
+	/**
+	 * Returns whether given SimpleDFA accepts a two-sided ideal language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isTwoSidedIdeal(SimpleDFA dfa) {
 		return isRightIdeal(dfa) && isLeftIdeal(dfa);
 	}
 
+	/**
+	 * Returns whether given SimpleDFA accepts an all-sided ideal language.
+	 * 
+	 * @param dfa - Deterministic finite automaton (accepted language to be tested)
+	 * @return boolean
+	 */
 	public boolean isAllSidedIdeal(SimpleDFA dfa) {
 		if (!isTwoSidedIdeal(dfa))
 			return false;
 
+		// add Sigma loops and chceck equivalence
 		SimpleMNFA mnfa = new SimpleMNFA(dfa);
 
-		// add Sigma loops
 		for (int state = 0; state < mnfa.getNumberOfStates(); state++) {
 			for (int symbol = 0; symbol < mnfa.getAlphabetSize(); symbol++) {
 				mnfa.getTransitionMatrix().get(state).get(symbol).add(state);
