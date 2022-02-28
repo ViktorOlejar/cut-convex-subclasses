@@ -3,7 +3,7 @@
 ![alt text](https://img.shields.io/github/last-commit/ViktorOlejar/cut-convex-subclasses)
 ![alt text](https://img.shields.io/github/repo-size/ViktorOlejar/cut-convex-subclasses)
 
-This repository contains supplementary computations and the source code for these computations for the publication: *"The State complexity of the cut operation in subclasses of convex languages"* submitted to CIAA 2022: 26th International Conference on Implementation and Application of Automata. In order to be be familiar with the definitions and terminology used here, we recommend the reader to read the publication before proceeding.
+This repository contains supplementary computations and the source code for these computations for the publication: *"The Cut Operation in Subclasses of Convex Languages"* submitted to CIAA 2022: 26th International Conference on Implementation and Application of Automata. In order to be be familiar with the definitions and terminology used here, we recommend the reader to read the publication before proceeding.
 
 ## automaton encoding explanation
 
@@ -71,7 +71,7 @@ Contains cut operation computations organized according to the corresponding sub
 
 ### HTML file `cutConvexTables`
 
-Contains a succinct overview of the results obtained in `cutOperationComputations` in HTML table format. It can be previewed at the following [link]( http://htmlpreview.github.io/?https://github.com/ViktorOlejar/cut-convex-subclasses/blob/main/computations/cutConvexTables.html).
+Contains a succinct overview of the results obtained in `cutOperationComputations` in HTML table format. Some alphabet sizes are out of date when compared to the current version of the paper - these indicate iterative improvements in the process of developing the final lower bound proofs. It can be previewed at the following [link]( http://htmlpreview.github.io/?https://github.com/ViktorOlejar/cut-convex-subclasses/blob/main/computations/cutConvexTables.html).
 
 ## LICENSE
 
